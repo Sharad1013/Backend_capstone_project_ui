@@ -1,0 +1,153 @@
+/* General Reset */
+body,
+h1,
+h2,
+h3,
+p,
+div,
+span {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff5f5;
+  color: #333;
+}
+
+/* Header */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #ffefef;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+.auth-buttons .login-btn,
+.auth-buttons .register-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.auth-buttons .register-btn {
+  background-color: #f39c12;
+}
+
+/* Search Section */
+.search-section {
+  padding: 2rem;
+  text-align: center;
+}
+.search-input {
+  width: 80%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.filters {
+  margin: 1rem 0;
+}
+.filter-tag {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.filter-tag .close-btn {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.search-buttons {
+  margin-top: 1rem;
+}
+.apply-btn,
+.clear-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Job List */
+.container {
+    width: 100%; /* Full width of the viewport */
+    padding: 10px; /* Optional: Add padding */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+.job-list {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 1rem;
+}
+.job-card {
+  display: flex;
+  flex-direction: row; /* Align content horizontally */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Take full width of the screen */
+  margin: 10px 0;
+  padding: 15px;
+  width: 90vw;
+  border: 1px solid #eaeaea; 
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for a modern look */
+  background-color: #fff; /* White background for contrast */
+}
+
+/* Styling for job details inside the card */
+.job-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Style for buttons */
+.view-details-button {
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.view-details-button:hover {
+  background-color: #ff3333;
+}
+
+/* Align job tags horizontally */
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.job-tag {
+  background-color: #ffecec;
+  color: #ff5a5f;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
