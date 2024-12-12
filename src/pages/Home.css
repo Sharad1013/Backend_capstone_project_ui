@@ -17,19 +17,20 @@ body {
 }
 
 /* Header */
-.home-header {
+/* .home-header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
   background-color: #ffefef;
   align-items: center;
-}
-.logo {
+} */
+
+/* .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #e74c3c;
-}
-.auth-buttons .login-btn,
+} */
+/* .auth-buttons .login-btn,
 .auth-buttons .register-btn {
   background-color: #e74c3c;
   color: #fff;
@@ -38,13 +39,13 @@ body {
   margin-left: 0.5rem;
   cursor: pointer;
   border-radius: 5px;
-}
-.auth-buttons .register-btn {
+} */
+/* .auth-buttons .register-btn {
   background-color: #f39c12;
-}
+} */
 
 /* Search Section */
-.search-section {
+/* .search-section {
   padding: 2rem;
   text-align: center;
 }
@@ -57,8 +58,8 @@ body {
 }
 .filters {
   margin: 1rem 0;
-}
-.filter-tag {
+} */
+/* .filter-tag {
   display: inline-block;
   background-color: #e74c3c;
   color: #fff;
@@ -74,8 +75,8 @@ body {
 }
 .search-buttons {
   margin-top: 1rem;
-}
-.apply-btn,
+} */
+/* .apply-btn,
 .clear-btn {
   background-color: #e74c3c;
   color: #fff;
@@ -84,13 +85,13 @@ body {
   margin: 0 0.5rem;
   cursor: pointer;
   border-radius: 5px;
-}
+} */
 
 /* Job List */
-.container {
-    width: 100%; /* Full width of the viewport */
-    padding: 10px; /* Optional: Add padding */
-    box-sizing: border-box; /* Include padding and border in width */
+/* .container {
+    width: 100%;
+    padding: 10px; 
+    box-sizing: border-box; 
   }
 .job-list {
   padding: 2rem;
@@ -100,28 +101,28 @@ body {
 }
 .job-card {
   display: flex;
-  flex-direction: row; /* Align content horizontally */
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Take full width of the screen */
+  width: 100%;
   margin: 10px 0;
   padding: 15px;
   width: 90vw;
   border: 1px solid #eaeaea; 
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for a modern look */
-  background-color: #fff; /* White background for contrast */
-}
+  border-radius: 10px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff; 
+} */
 
 /* Styling for job details inside the card */
-.job-details {
+/* .job-details {
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
+} */
 
 /* Style for buttons */
-.view-details-button {
+/* .view-details-button {
   background-color: #ff5a5f;
   color: #fff;
   padding: 10px 20px;
@@ -130,24 +131,247 @@ body {
   cursor: pointer;
   text-align: center;
   font-size: 1rem;
-}
-
+} */
+/* 
 .view-details-button:hover {
   background-color: #ff3333;
-}
+} */
 
 /* Align job tags horizontally */
-.job-tags {
+/* .job-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   margin-top: 10px;
-}
+} */
 
-.job-tag {
+/* .job-tag {
   background-color: #ffecec;
   color: #ff5a5f;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.9rem;
+} */
+
+/* Home.css */
+
+/* Home.css */
+
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.home-container {
+  padding: 20px;
+}
+
+.home-header {
+  background: linear-gradient(45deg, #ff6b6b, #ff8787);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  border-radius: 0 0 10px 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-btn {
+  background-color: white;
+  color: #ff6b6b;
+}
+
+.register-btn {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+/* Search Section */
+.search-section {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.search-section .search-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.search-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.search-buttons .apply-btn,
+.search-buttons .clear-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.apply-btn {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.apply-btn:hover {
+  background-color: #e76969;
+}
+
+.add-btn {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #e76969;
+}
+
+.clear-btn {
+  background-color: white;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+/* Tags Styling */
+.skill-tag {
+  display: inline-block;
+  background-color: #ffd6d6;
+  color: #ff4c4c;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px;
+}
+
+.skill-tag button {
+  background: transparent;
+  border: none;
+  color: #ff4c4c;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Job List */
+.job-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.job-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  gap: 15px;
+  border-left: 5px solid #ff6b6b;
+}
+
+.job-inner {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.job-card img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.job-details h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.job-details p {
+  margin: 5px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.job-tags {
+  margin-top: 10px;
+}
+
+.job-tag {
+  background-color: #ffd6d6;
+  color: #ff4c4c;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.view-details-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  font-weight: 700;
+  border-radius: 8.07px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #ed5353;
+  color: #ed5353;
+  font-weight: 700;
+  border-radius: 8.07px;
+}
+
+.view-details-button:hover {
+  background-color: #e63939;
 }

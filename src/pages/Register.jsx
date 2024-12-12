@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { register } from "../../services";
-import "./Register.css"; // Import the CSS file for styling
-import { NavLink } from "react-router-dom";
+import "./Register.css";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -16,6 +17,7 @@ const Register = () => {
     const res = await register(formData);
     if (res.status === 200) {
       alert("Registered successfully");
+      navigate("/login");
     } else {
       console.log(res);
       alert("Error");
@@ -24,7 +26,6 @@ const Register = () => {
 
   return (
     <div className="register-container">
-      {/* Left Section */}
       <div className="form-section">
         <h2 className="title">Create an account</h2>
         <p className="subtitle">Your personal job finder is here</p>
@@ -88,8 +89,7 @@ const Register = () => {
         </p>
       </div>
 
-      {/* Right Section */}
-      <div className="image-section">
+      <div className="image-sectionn">
         <div className="image-content">
           <h2>Your Personal Job Finder</h2>
         </div>

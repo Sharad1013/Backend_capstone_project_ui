@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { login } from "../../services";
-import "./Login.css"; // Import the CSS file for styling
+import "./Login.css";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
-  if (localStorage.getItem("token")) {
-    alert("Already logged in");
-    navigate("/home");
-  }
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/home");
+    }
+  }, []);
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
@@ -18,7 +20,9 @@ const Login = () => {
     e.preventDefault();
     const res = await login(loginFormData);
     if (res.status === 200) {
-      localStorage.setItem("token", res.token);
+      const data = await res.json();
+      console.log(data);
+      localStorage.setItem('token', data.token)
       alert("Logged in successfully");
       navigate("/home");
     } else {
@@ -29,7 +33,6 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      {/* Left Section */}
       <div className="form-section">
         <h2 className="title">Already have an account?</h2>
         <p className="subtitle">Your personal job finder is here</p>
@@ -72,8 +75,7 @@ const Login = () => {
         </p>
       </div>
 
-      {/* Right Section */}
-      <div className="image-section">
+      <div className="image-sectionn">
         <div className="image-content">
           <h2>Your Personal Job Finder</h2>
         </div>
