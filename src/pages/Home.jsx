@@ -2,24 +2,31 @@ import React, { useState, useEffect } from "react";
 import { getJobs, deleteJob } from "../../services";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+const debouncingTime = 1000;
+
+const debounce = (func, wait) => {
+  let timeout;
+  const context = this;
+  clearTimeout(timeout);
+  timeout = setTimeout(() => func.call(context, []), wait);
+};
 
 const Home = () => {
+  // const useDebounceSearch = (value, delay) => {
+  //   const [debouncedValue, setDebouncedValue] = useState(value);
 
-  const useDebounceSearch = (value, delay) => {
-    const [debouncedValue, setDebouncedValue] = useState(value);
+  //   useEffect(() => {
+  //     const handler = setTimeout(() => {
+  //       setDebouncedValue(value);
+  //     }, delay);
 
-    useEffect(() => {
-      const handler = setTimeout(() => {
-        setDebouncedValue(value);
-      }, delay);
+  //     return () => {
+  //       clearTimeout(handler);
+  //     };
+  //   }, [value, delay]);
 
-      return () => {
-        clearTimeout(handler);
-      };
-    }, [value, delay]);
-
-    return debouncedValue;
-  };
+  //   return debouncedValue;
+  // };
 
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
@@ -29,14 +36,15 @@ const Home = () => {
   const [count, setCount] = useState(0);
   const [search, setSearch] = useState("");
 
-  const debouncedSearch = useDebounceSearch(search, 500);
+  // const debouncedSearch = useDebounceSearch(search, 500);
   const token = localStorage.getItem("token");
+
   const fetchJobs = async () => {
     setLoading(true);
     const res = await getJobs({
       limit,
       offset: offset * limit,
-      name: debouncedSearch,
+      name: search,
     });
     if (res.status === 200) {
       const data = await res.json();
@@ -49,8 +57,11 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchJobs();
-  }, [limit, offset, debouncedSearch]);
+    debounce(() => {
+      fetchJobs();
+    }, debouncingTime);
+    // fetchDebounced();
+  }, [limit, offset, search]);
 
   const handleDeleteJob = async (id) => {
     const res = await deleteJob(id);
