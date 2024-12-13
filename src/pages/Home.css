@@ -16,148 +16,6 @@ body {
   color: #333;
 }
 
-/* Header */
-/* .home-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #ffefef;
-  align-items: center;
-} */
-
-/* .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #e74c3c;
-} */
-/* .auth-buttons .login-btn,
-.auth-buttons .register-btn {
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
-  cursor: pointer;
-  border-radius: 5px;
-} */
-/* .auth-buttons .register-btn {
-  background-color: #f39c12;
-} */
-
-/* Search Section */
-/* .search-section {
-  padding: 2rem;
-  text-align: center;
-}
-.search-input {
-  width: 80%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-.filters {
-  margin: 1rem 0;
-} */
-/* .filter-tag {
-  display: inline-block;
-  background-color: #e74c3c;
-  color: #fff;
-  padding: 0.5rem;
-  margin: 0.2rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.filter-tag .close-btn {
-  margin-left: 5px;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-.search-buttons {
-  margin-top: 1rem;
-} */
-/* .apply-btn,
-.clear-btn {
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  cursor: pointer;
-  border-radius: 5px;
-} */
-
-/* Job List */
-/* .container {
-    width: 100%;
-    padding: 10px; 
-    box-sizing: border-box; 
-  }
-.job-list {
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-  gap: 1rem;
-}
-.job-card {
-  display: flex;
-  flex-direction: row; 
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 10px 0;
-  padding: 15px;
-  width: 90vw;
-  border: 1px solid #eaeaea; 
-  border-radius: 10px; 
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff; 
-} */
-
-/* Styling for job details inside the card */
-/* .job-details {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-} */
-
-/* Style for buttons */
-/* .view-details-button {
-  background-color: #ff5a5f;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 1rem;
-} */
-/* 
-.view-details-button:hover {
-  background-color: #ff3333;
-} */
-
-/* Align job tags horizontally */
-/* .job-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 10px;
-} */
-
-/* .job-tag {
-  background-color: #ffecec;
-  color: #ff5a5f;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-} */
-
-/* Home.css */
-
-/* Home.css */
-
-/* General Styling */
 body {
   margin: 0;
   padding: 0;
@@ -300,8 +158,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  gap: 15px;
+  /* gap: 35px; */
   border-left: 5px solid #ff6b6b;
+  margin-bottom: 20px;
 }
 
 .job-inner {
@@ -374,4 +233,72 @@ body {
 
 .view-details-button:hover {
   background-color: #e63939;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-evenly;
+  background: transparent;
+  padding: 5px 10px;
+  width: 100px;
+  font-size: 15px;
+  border: 1px solid #ed5353;
+  border-radius: 8.06px;
+  color: #ed5353;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  text-align: center;
+}
+
+.pagination-buttons img{
+  width: 15px;
+}
+
+.pagination-buttons button:hover{
+  background-color: #e63939;
+  color: #fff;
+}
+
+.pagination-buttons button:disabled{
+  cursor: not-allowed;
+}
+
+.offset{
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #e76969;
+  border-radius: 8.07px;
+}
+
+.offset-container{
+  display: flex;
+  gap: 20px;
+}
+
+.offset-container h1{
+  font-weight: 400;
+}
+
+.search{
+  padding: 10px 20px;
+  width: 300px;
+  border-radius: 8.06px;
+  border: none;
+  font-size: 20px;
 }

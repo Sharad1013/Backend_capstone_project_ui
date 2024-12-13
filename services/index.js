@@ -19,8 +19,8 @@ export const login = (data) => {
   });
 };
 
-export const getJobs = () => {
-  return fetch(`${URL}/job`, {
+export const getJobs = ({limit, offset, name}) => {
+  return fetch(`${URL}/job?limit=${limit}&offset=${offset}&name=${name}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -28,7 +28,6 @@ export const getJobs = () => {
   });
 };
 
-// return fetch(`${URL}/job?limit=${limit}&offset=${offset}&name=${name}
 export const createJob = (data) => {
   return fetch(`${URL}/job`, {
     method: "POST",
