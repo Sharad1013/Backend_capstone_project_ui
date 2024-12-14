@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { getJobs, deleteJob } from "../../services";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
@@ -36,32 +36,79 @@ const Home = () => {
   const [count, setCount] = useState(0);
   const [search, setSearch] = useState("");
 
+  const abortControllerRef = useRef(null);
+  const debounceTimerRef = useRef(null);
+
   // const debouncedSearch = useDebounceSearch(search, 500);
   const token = localStorage.getItem("token");
 
-  const fetchJobs = async () => {
-    setLoading(true);
-    const res = await getJobs({
-      limit,
-      offset: offset * limit,
-      name: search,
-    });
-    if (res.status === 200) {
-      const data = await res.json();
-      setJobs(data.jobs);
-      setCount(data.count);
-    } else {
-      console.log(res);
+  const fetchJobs = useCallback(async () => {
+    // Cancel any ongoing request
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
     }
-    setLoading(false);
-  };
+
+    // Creating a new abortcontroller
+    abortControllerRef.current = new AbortController();
+    const signal = abortControllerRef.current.signal;
+
+    try {
+      setLoading(true);
+      const res = await getJobs({
+        limit,
+        offset: offset * limit,
+        name: search,
+        signal,
+      });
+
+      if (res.status === 200) {
+        const data = await res.json();
+        setJobs(data.jobs);
+        setCount(data.count);
+      } else {
+        console.error("Failed to fetch jobs", res);
+      }
+    } catch (error) {
+      // Handle abort or other errors
+      if (error.name === "AbortError") {
+        console.log("Request was cancelled");
+      } else {
+        console.error("Error fetching jobs", error);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [limit, offset, search]);
+
+  // useEffect(() => {
+  //   debounce(() => {
+  //     fetchJobs();
+  //   }, debouncingTime);
+  //   // fetchDebounced();
+  // }, [limit, offset, search]);
+
+  const debouncedFetchJobs = useCallback(() => {
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    debounceTimerRef.current = setTimeout(() => {
+      fetchJobs();
+    }, 500);
+  }, [fetchJobs]);
 
   useEffect(() => {
-    debounce(() => {
-      fetchJobs();
-    }, debouncingTime);
-    // fetchDebounced();
-  }, [limit, offset, search]);
+    debouncedFetchJobs();
+
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, [limit, offset, search, debouncedFetchJobs]);
 
   const handleDeleteJob = async (id) => {
     const res = await deleteJob(id);
@@ -137,19 +184,19 @@ const Home = () => {
       </div>
 
       <div className="job-list">
+        <input
+          type="text"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          value={search}
+          placeholder="search"
+          className="search"
+        />
         {loading ? (
           <h2>Loading...</h2>
         ) : (
           <>
-            <input
-              type="text"
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-              value={search}
-              placeholder="search"
-              className="search"
-            />
             <div>
               {jobs.map((job) => (
                 <div className="job-card" key={job._id}>

@@ -5,7 +5,7 @@ import "./NewJob.css";
 
 export default function NewJob() {
   const { id } = useParams();
-  const [isEdit, setIsEdit] = useState(false);
+  // const [isEdit, setIsEdit] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     if (id) {
@@ -72,9 +72,7 @@ export default function NewJob() {
     <div className="container">
       <div className="form-container">
         <div className="form-section">
-          <h1 className="form-title">
-            {"Add Job Description"}
-          </h1>
+          <h1 className="form-title">{"Add Job Description"}</h1>
           <form onSubmit={handleCreateJob} className="form">
             <input
               type="text"
@@ -187,7 +185,7 @@ export default function NewJob() {
                 Cancel
               </button>
               <button type="submit" className="submit-button">
-                 Add Job
+                Add Job
               </button>
             </div>
           </form>
