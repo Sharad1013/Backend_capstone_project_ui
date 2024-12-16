@@ -1,129 +1,127 @@
 /* Container Styling */
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Form Container */
-  .form-container {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: auto;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  /* Form Section */
-  .form-section {
-    width: 50%;
-    padding: 30px;
-  }
-  
-  .form-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .input,
-  .select,
-  .textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .input:focus,
-  .select:focus,
-  .textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .textarea {
-    resize: none;
-    height: 100px;
-  }
-  
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .cancel-button {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .cancel-button:hover {
-    background-color: #f5c6cb;
-  }
-  
-  .submit-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Design Section */
-  .design-section {
-    width: 50%;
-    background-color: #000;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  .design-title {
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  
-  .design-section::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background-image: url('WallpaperDog-20567151 1.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.7;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Form Section */
+.form-section {
+  width: 50%;
+  padding: 30px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.textarea {
+  resize: none;
+  height: 100px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #f5c6cb;
+}
+
+.submit-button {
+  background-color: #ed5353;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #ed5353;
+}
+
+/* Design Section */
+.design-section {
+  width: 50%;
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.design-title {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.design-section::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url("WallpaperDog-20567151 1.png");
+  background-size: cover;
+  background-position: center;
+}
