@@ -99,9 +99,11 @@
   } */
 
 .image-content {
+  background: url("image 466.png") no-repeat center center/cover;
   position: relative;
   color: white;
   text-align: center;
+  top: 0;
 }
 
 .image-content h2 {
