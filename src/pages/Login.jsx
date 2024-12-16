@@ -78,6 +78,7 @@ const Login = () => {
       <div className="image-sectionn">
         <div className="image-content">
           <h2>Your Personal Job Finder</h2>
+          <img src="image 466.png" alt="" />
         </div>
       </div>
     </div>

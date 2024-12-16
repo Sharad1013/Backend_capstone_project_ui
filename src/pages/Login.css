@@ -77,26 +77,19 @@
 }
 
 /* Right image section */
-.image-sectionn {
-  flex: 1;
-  background: url("image 466.png") no-repeat center center/cover;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-}
-
-/* .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+/* .image-sectionn {
+  /* flex: 1; */
+/* background: url("image 466.png") no-repeat center center/cover; */
+/* background: no-repeat center center/cover; */
+/* position: relative; */
+/* display: flex; */
+/* justify-content: center; */
+/* align-items: center; */
+/* top: 0; 
 } */
 
 .image-content {
+  background: url("image 466.png") no-repeat center center/cover;
   position: relative;
   color: white;
   text-align: center;
